@@ -1,0 +1,34 @@
+page-prayer {
+
+}
+page-prayer ion-icon::before {
+	color: #40537e;
+}
+page-prayer .button-clear-md, page-prayer .button-clear-ios {
+	color: #40537e;
+}
+page-prayer ion-note{padding-top:10px;display:inline-block;}
+.top-tabs ion-col{background:#556a98;color:#FFF;cursor:pointer;}
+.top-tabs ion-col:first-child{border-right:1px solid #40537e;}
+.top-tabs ion-icon{color:#FFF;}
+page-prayer .top-tabs ion-icon::before {
+	color: #FFF;font-size:2rem;
+}
+.active{background:#556a98 !important;}
+
+.toolbar-background-md, .toolbar-background-ios {
+	border-color: transparent;
+	background: #40537e;
+}
+.toolbar-title-md, .toolbar-title-ios{color:#FFF;}
+ion-menu .content-md {
+	color: #FFF;
+	background-color: #556a98;
+}
+
+ion-menu .item.item-block.item-md{color: #FFF;
+	background-color: #556a98;}
+	
+ion-menu .list-md .item-block .item-inner {
+	border-bottom: 1px solid #40537e;
+}

@@ -1,0 +1,34 @@
+page-home .header {
+background:none;
+}
+
+page-home .toolbar-background {
+	border-color: transparent;
+	background: transparent;
+} 
+page-home .toolbar-title {
+	text-align: center;
+	color: #FFF;
+	text-transform:uppercase;font-size: 1.5rem;
+} 
+page-home .content {
+background-color:#92a0ba;background-image:url(../assets/splash-bg.png);background-repeat:no-repeat;background-position:bottom 50px center;background-size:100%; 
+}
+
+
+.tabs-md .tabbar{background:#40537e;}
+.tabs-md[tabsLayout="icon-top"] .has-icon .tab-button-text {
+	color:#FFF;
+}
+ion-icon::before{color:#FFF;}
+.tabs-md .tab-button[aria-selected="true"] .tab-button-icon{color:#9ba9c4;}
+
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{background:none;}
+.toolbar-background-md {
+	border-color: transparent;
+	background: #f8f8f8;
+}
+
+.app-logo{float:left;width:100%;text-align:center;}
+.app-logo img{max-width:100px;}
+.app-name{font-size:6rem;font-family: 'Open Sans', sans-serif;font-weight:700;color:#FFF;float:left;text-align:center;width:100%;}

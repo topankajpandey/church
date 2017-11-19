@@ -1,0 +1,36 @@
+page-about {
+
+}
+page-about .toolbar-background {
+	border-color: transparent;
+	background: #3e537d;
+} 
+page-about .toolbar-title {
+	text-align: center;
+	color: #FFF;text-transform:uppercase;font-size: 1.5rem;
+} 
+.evt{background:#919fb9;text-align:center;padding-top:1rem;}
+.evt-dt{background:#dfe3eb;}
+.event-date{float:left;width:100%;font-size: 2rem;color: #FFF;font-weight: 400;}
+.event-date span{font-size: 4rem;color: #FFF;font-weight: 700;float:left;width:100%;line-height: 4rem;}
+.event-detail{}
+.event-detail h2 {
+	margin: 0 0 2px;
+	font-size: 1.7rem;
+	font-weight: 700;
+	color:#3e537d;
+}
+.event-detail p {
+	overflow: inherit;
+	font-size: 1.4rem;
+	line-height: normal;
+	text-overflow: inherit;
+	color: #3e537d;
+	font-weight: 400;
+	margin: 0 0 2px;
+}
+.small-p{font-size:1rem;}
+
+page-about .row {
+	margin-bottom: 1px;
+}

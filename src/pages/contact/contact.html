@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<div padding>
+  <ion-segment [(ngModel)]="pet">
+    <ion-segment-button value="Login">
+      Login
+    </ion-segment-button>
+    <ion-segment-button value="Register">
+      Register
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="pet">
+  <ion-list *ngSwitchCase="'Login'">
+    
+		<ion-item>
+		<ion-label floating>Email</ion-label>
+		<ion-input type="text"></ion-input>
+	  </ion-item>
+  
+	  <ion-item>
+		<ion-label floating>Password</ion-label>
+		<ion-input type="password"></ion-input>
+	  </ion-item>
+    
+<div padding>
+      <button ion-button color="primary" block>Submit</button>
+</div>
+ 
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'Register'">
+    <ion-item>
+		<ion-label floating>Name</ion-label>
+		<ion-input type="text"></ion-input>
+	  </ion-item>
+	  <ion-item>
+		<ion-label floating>Email</ion-label>
+		<ion-input type="text"></ion-input>
+	  </ion-item>
+  
+	  <ion-item>
+		<ion-label floating>Password</ion-label>
+		<ion-input type="password"></ion-input>
+	  </ion-item>
+	  <ion-item>
+		<ion-label floating>Confirm Password</ion-label>
+		<ion-input type="password"></ion-input>
+	  </ion-item>
+	
+<div padding>
+      <button ion-button color="primary" block>Submit</button>
+</div>
+  </ion-list>
+</div>
+
+</ion-content>

@@ -1,0 +1,14 @@
+page-contact {
+
+}
+page-contact ion-segment{background:#919fb9;border-radius:50px;overflow:hidden;}
+page-contact .segment-md .segment-button{color:#FFF;font-weight:600;}
+page-contact .segment-md .segment-button.activated, page-contact .segment-md .segment-button.segment-activated {
+	border-color: #3e537d;
+	background-color: #3e537d;
+	opacity: 1;
+	color:#FFF;
+}
+
+
+page-contact .button-md{background-color: #3e537d;border-radius:50px;padding:2.5rem;}
