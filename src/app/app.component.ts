@@ -3,6 +3,7 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login'; 
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { BiblePage } from '../pages/bible/bible';
@@ -20,7 +21,7 @@ import { ChattingPage } from '../pages/chatting/chatting';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   @ViewChild(Nav) navChild:Nav;
-  rootPage:any = TabsPage;
+  rootPage:any = LoginPage;
   pages: Array<{title: string, component: any}>;
   public home_page = 'Home';
   public about_page = 'About';
