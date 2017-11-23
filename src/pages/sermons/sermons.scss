@@ -1,0 +1,15 @@
+page-sermons {
+
+}
+page-sermons .item-md ion-thumbnail, page-sermons .item-ios ion-thumbnail {
+    min-width: 50px;
+    min-height: 50px;
+}
+page-sermons .item-md ion-thumbnail ion-img, page-sermons .item-md ion-thumbnail img, page-sermons .item-ios ion-thumbnail ion-img, page-sermons .item-ios ion-thumbnail img {
+    width: 50px;
+    height: 50px;
+}
+
+page-sermons ion-icon::before {
+    color: #40537e;font-size: 2.5rem;
+}

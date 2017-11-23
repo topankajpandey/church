@@ -1,0 +1,21 @@
+
+page-login {
+
+}
+page-login ion-segment{background:#919fb9;border-radius:50px;overflow:hidden;}
+page-login .segment-md .segment-button, page-login .segment-ios .segment-button{color:#FFF;font-weight:600;}
+page-login .segment-md .segment-button.activated, page-login .segment-md .segment-button.segment-activated, page-login .segment-ios .segment-button.activated, page-login .segment-ios .segment-button.segment-activated {
+	border-color: #3e537d;
+	background-color: #3e537d;
+	opacity: 1;
+	color:#FFF;
+}
+
+
+page-login .button-md, page-login .button-ios{background-color: #3e537d;border-radius:50px;padding:2.5rem;}
+
+.button-md-primary:hover:not(.disable-hover), .button-ios-primary:hover:not(.disable-hover) {
+    background-color: #919fb9;
+}
+
+.login-bg{background:url(../assets/imgs/login-bg.png) no-repeat bottom center / 100%;height:100%;}

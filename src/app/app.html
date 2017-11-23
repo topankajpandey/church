@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-menu [content]="content" persistent="true"> 
+  <ion-content>
+	  <div class="bg-block nav-lt">
+			<div class="user-img"> <img src="assets/imgs/marty-avatar.png"></div>
+			<div class="user-name">John Smith</div>
+		</div>
+      <ion-list class="left-nav">
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
+      </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

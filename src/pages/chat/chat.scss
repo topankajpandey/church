@@ -1,0 +1,19 @@
+page-chat {
+
+}
+page-chat ion-segment{background:#919fb9;border-radius:50px;overflow:hidden;}
+page-chat .segment-md .segment-button, page-chat .segment-ios .segment-button{color:#FFF;font-weight:600;}
+page-chat .segment-md .segment-button.activated, page-chat .segment-md .segment-button.segment-activated, page-chat .segment-ios .segment-button.activated, page-chat .segment-ios .segment-button.segment-activated {
+	border-color: #3e537d;
+	background-color: #3e537d;
+	opacity: 1;
+	color:#FFF;
+}
+
+
+page-chat .button-md, page-chat .button-ios{background-color: #3e537d;border-radius:50px;padding:2.5rem;}
+
+.green{background-color:green !important;color:#FFF !important;}
+.green .button-inner{background-color:green !important;color:#FFF !important;}
+
+
