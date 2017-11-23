@@ -4,24 +4,18 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<<<<<<< HEAD
-<ion-menu [content]="content" persistent="true"> 
+<ion-menu [content]="content">
   <ion-content>
 	  <div class="bg-block nav-lt">
 			<div class="user-img"> <img src="assets/imgs/marty-avatar.png"></div>
 			<div class="user-name">John Smith</div>
 		</div>
       <ion-list class="left-nav">
-=======
-<ion-menu [content]="content">
-  <ion-content>
-      <ion-list class="left-nav">
-          <button menuClose ion-item><img style="border-radius: 30px;" width="50" src="assets/imgs/marty-avatar.png"></button>
->>>>>>> 24c968bfa91b64575719c1a9e8653ee76db217e1
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
       </ion-list>
   </ion-content>
