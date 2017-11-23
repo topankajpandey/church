@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "church",
   "app_id": "a1ec6df0",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   }
+=======
+  "name": "myApp",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {}
+>>>>>>> 24c968bfa91b64575719c1a9e8653ee76db217e1
 }
