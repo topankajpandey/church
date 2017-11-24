@@ -24,7 +24,7 @@ export class ChatPage {
   }
   
   chatting(){
-	 this.navCtrl.setRoot(ChattingPage);
-	 }
+	 this.navCtrl.push(ChattingPage);
+  }
 
 }

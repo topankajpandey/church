@@ -3,10 +3,11 @@
   <ion-content>
 	  <div class="bg-block nav-lt">
 			<div class="user-img"> <img src="assets/imgs/marty-avatar.png"></div>
-			<div class="user-name">John Smith</div>
+			<div class="user-name">{{this.username}}</div>
 		</div>
       <ion-list class="left-nav">
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
+        <button menuClose ion-item (click)="logout()">Logout</button>
       </ion-list>
   </ion-content>
 </ion-menu>

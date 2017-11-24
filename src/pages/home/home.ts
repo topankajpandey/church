@@ -7,12 +7,17 @@ import { ChatPage } from '../../pages/chat/chat';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  data: any; 
   constructor(public navCtrl: NavController, public menu: MenuController) {
-    this.menu.enable(true); 
+    this.menu.enable(true);
+    this.data = JSON.parse(localStorage.getItem('user_data'));
+  }
+
+  ionViewDidLoad() {
+    console.log('HomePage Loaded');
   }
 
 	chat(){
-	 this.navCtrl.setRoot(ChatPage);
+	 this.navCtrl.push(ChatPage);
 	 }
 }

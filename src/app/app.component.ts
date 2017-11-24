@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
+import { Platform, Nav, Events, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -13,6 +13,7 @@ import { PrayerPage } from '../pages/prayer/prayer';
 import { ContactPage } from '../pages/contact/contact';
 import { ChatPage } from '../pages/chat/chat';
 import { ChattingPage } from '../pages/chatting/chatting';
+//import { MenuController } from 'ionic-angular/components/app/menu-controller';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class MyApp {
   @ViewChild(Nav) navChild:Nav;
   rootPage:any = LoginPage;
   pages: Array<{title: string, component: any}>;
+  public username = '';
   public home_page = 'Home';
   public about_page = 'About';
   public bible_page = 'Bible';
@@ -30,9 +32,13 @@ export class MyApp {
   public users_page = 'Profile';
   public prayer_page = 'Prayer Wall';
   public contact_page = 'Contact';
-  constructor(public platform: Platform,  public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public menuCtrl: MenuController,  public events: Events, public statusBar: StatusBar, public splashScreen: SplashScreen) {
 
-    this.main_navigation();
+      this.main_navigation();
+
+      events.subscribe('user:update', (user) => {
+        this.username = user;
+      });
 
   }
 
@@ -55,6 +61,13 @@ export class MyApp {
 
   openPage(page) {
     this.nav.setRoot(page.component);
+  }
+
+  logout(){
+    console.log("bye bye takecare! See you soon.");
+    localStorage.clear();
+    this.menuCtrl.enable(false);
+    this.nav.setRoot(LoginPage);
   }
 
 
