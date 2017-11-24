@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { ChatPage } from '../../pages/chat/chat';
 
 @Component({
@@ -8,8 +8,8 @@ import { ChatPage } from '../../pages/chat/chat';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public menu: MenuController) {
+    this.menu.enable(true); 
   }
 
 	chat(){

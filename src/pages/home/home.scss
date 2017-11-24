@@ -1,19 +1,21 @@
-page-home .header {
-background:none;
+page-home  {
+
+	.header{background:none;}
+	.toolbar-background {
+		border-color: transparent;
+		background: transparent;
+	} 
+	.toolbar-title {
+		text-align: center;
+		color: #FFF;
+		text-transform:uppercase;font-size: 1.5rem;
+	} 
+	.content {
+	background-color:#92a0ba;
+	//background-image:url(../assets/splash-bg.png);background-repeat:no-repeat;background-position:bottom 50px center;background-size:100%; 
+	}
 }
 
-page-home .toolbar-background {
-	border-color: transparent;
-	background: transparent;
-} 
-page-home .toolbar-title {
-	text-align: center;
-	color: #FFF;
-	text-transform:uppercase;font-size: 1.5rem;
-} 
-page-home .content {
-background-color:#92a0ba;background-image:url(../assets/splash-bg.png);background-repeat:no-repeat;background-position:bottom 50px center;background-size:100%; 
-}
 
 
 .tabs-md .tabbar{background:#40537e;}

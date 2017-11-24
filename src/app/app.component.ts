@@ -38,6 +38,7 @@ export class MyApp {
 
   main_navigation(){
     this.pages = [
+      { title: this.home_page, component: HomePage }, 
       { title: this.bible_page, component: BiblePage },
       { title: this.sermons_page, component: SermonsPage },
       { title: this.prayer_page, component: PrayerPage },

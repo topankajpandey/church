@@ -1,33 +1,32 @@
 <ion-header>
-  <ion-navbar  hideBackButton="true" persistent="true">
-    <ion-title>
-      Contact
+  <ion-navbar hideBackButton="true" persistent="true">
+    <ion-title text-center>
+      Login
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="login-bg">
 
+    <ion-list>
+      <form [formGroup]="login_form" (ngSubmit)="login()">
+      <ion-item text-center>
+            <img src="assets/icon/mail.png">
+      </ion-item>
 
-<div>
-  <ion-list>
-    
-		<ion-item>
-		<ion-label floating>Email</ion-label>
-		<ion-input type="text"></ion-input>
-	  </ion-item>
-  
-	  <ion-item>
-		<ion-label floating>Password</ion-label>
-		<ion-input type="password"></ion-input>
-	  </ion-item>
-    
-<div padding>
-      <button ion-button color="primary" block>Submit</button>
-</div>
- 
-  </ion-list>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input [(ngModel)]="login_data.username" formControlName="username" value="" type="text"></ion-input>
+      </ion-item>
 
-</div>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input [(ngModel)]="login_data.password" formControlName="password" value="" type="password"></ion-input>
+      </ion-item>
 
+      <div padding>
+        <button ion-button color="primary" block type="submit" [disabled]="login_form.invalid">Submit</button>
+      </div>
+      </form>
+    </ion-list>
 </ion-content>

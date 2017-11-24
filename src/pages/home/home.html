@@ -1,12 +1,27 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar hideBackButton="true" persistent="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title text-center>Posture</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="app-logo"><img src="assets/imgs/app-logo.png"></div>
-  <div class="app-name">THE WAY</div>
+  <div class="app-logo"><!--img src="assets/imgs/app-logo.png"--></div>
+  <!--div class="app-name">Posture</div-->
+
+  <div padding>
+      <button ion-button color="primary" block type="submit">Search Patient</button>
+  </div>
+
+  <div padding>
+      <button ion-button color="primary" block type="submit">New Patient Exam</button>
+  </div>
+
+  <div padding>
+      <button ion-button color="primary" block type="submit">Settings</button>
+  </div>
 
 </ion-content>
 <ion-footer>
