@@ -1,0 +1,166 @@
+
+<ion-header>
+  <ion-navbar hideBackButton="true" persistent="true">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title text-center>Church Wall</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+  <!--ion-item>
+    <ion-avatar item-start  (click)="wallCreate()">
+      <img src="{{user.photo}}">
+    </ion-avatar>
+  </ion-item-->
+
+  <ion-card class="row commentdiv">
+    <ion-col class="col" col-3="">
+
+            <ion-avatar item-start >
+              <img src="{{user.photo}}" style="border-radius: 50px; width:40px; height:40px;">
+            </ion-avatar>
+
+    </ion-col>
+    <ion-col class="col" col-9="">
+          <ion-item>
+              <a style="text-decoration: none;" href="javascript:void(0)" (click)="wallCreate()">Whats on your mind?</a>
+              <!--ion-input placeholder="Whats on your mind?"  type="text" (click)="wallCreate()"></ion-input-->
+          </ion-item>
+    </ion-col>
+</ion-card>
+
+
+    <ng-container *ngIf="posts?.length >0">
+        <ion-card *ngFor="let post of posts; let i = index;">
+        <ion-item>
+          <ion-avatar item-start  (click)="profile(post.user_id, post.user_name, post.user_image)">
+            <img src="{{post.user_image}}">
+          </ion-avatar>
+          <h2>{{post.user_name}}</h2>
+          <p>{{post.created}}</p>
+        </ion-item>
+        <ion-card-content>
+        <p [innerHTML]= "'' + post.content + ''"></p>
+        </ion-card-content>
+
+        <ng-container *ngIf="post.post_image==''; else elseTemplateForPostImage">
+
+        </ng-container>
+        <ng-template #elseTemplateForPostImage>
+            <img src="{{post.post_image}}" *ngIf="post.media_type=='image'">
+            <video class="video-player" width="{{platform_width}}" src="{{post.post_image}}" controls="false" *ngIf="post.media_type=='video'">
+                <source src="{{post.post_image}}" id="video_here">
+            </video>
+        </ng-template>
+
+
+        <ion-row>
+          <ion-col>
+
+                <button ion-button icon-left clear small (click)="likes(post.id)">
+
+                  <ion-icon rel="like" id="thumb_changer_{{post.id}}" name="ios-thumbs-up-outline" *ngIf="post.is_like==0"></ion-icon>
+                  <ion-icon rel="unlike" id="thumb_changer_{{post.id}}" name="thumbs-up" *ngIf="post.is_like > 0"></ion-icon>
+
+                  <div class="post_like_{{post.id}}">{{post.total_likes}}</div>
+                </button>
+
+
+            <!--ng-template #elseTemplateLikeThumb>
+                <button ion-button icon-left clear small (click)="likes(post.id, post.total_likes, 'do_disylike')">
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div class="post_like_{{post.id}}">{{post.total_likes}}</div>
+                  </button>
+            </ng-template-->
+
+          </ion-col>
+          <ion-col>
+
+            <button ion-button icon-left clear small (click)="comments_modal(post.id)">
+              <ion-icon name="text"></ion-icon>
+              <div class="total_comment_{{post.id}}">{{post.comments?.length}}</div>
+            </button>
+            <!--button *ngIf="post.comments?.length===0" ion-button icon-left clear small>
+                <ion-icon name="text"></ion-icon>
+                <div>{{post.comments?.length}}</div>
+            </button-->
+
+          </ion-col>
+
+          <ion-col center text-center>
+            <ion-note>
+              {{post.time_ago}}
+            </ion-note>
+          </ion-col>
+        </ion-row>
+
+
+        <div class="message-wrap comment_section_{{post.id}}" *ngIf="post.comments?.length >0">
+            <div class="message left" *ngFor="let comment_data of post.comments; let i = index">
+
+              <ng-container *ngIf="i<=1">
+                <img alt="" class="user-img" src="{{comment_data.Users.photo}}" (click)="profile(comment_data.Users.id, comment_data.Users.username, comment_data.Users.photo)">
+              <div class="msg-detail">
+                <div class="msg-content">
+                  <span class="triangle"></span>
+                  <p class="line-breaker ">{{comment_data.comment}}</p>
+                </div>
+                <div class="msg-info">
+                    <p>by {{comment_data.Users.username}}</p>
+                </div>
+              </div>
+              </ng-container>
+
+            </div>
+        </div>
+        <div class="message-wrap comment_section_{{post.id}}" *ngIf="post.comments?.length===0"></div>
+
+
+        <ion-row class="row commentdiv">
+          <ion-col class="col" col-3="">
+              <ion-item>
+                  <ion-avatar item-start >
+                    <img src="{{user.photo}}">
+                  </ion-avatar>
+              </ion-item>
+          </ion-col>
+          <ion-col class="col" col-9="">
+            <form [formGroup]="comment_form" (ngSubmit)="comments(post.id, post.comments.length)">
+                <!--ion-item>
+                    <ion-input placeholder="Write a comment" [(ngModel)]="post[i]" formControlName="comment" type="text"></ion-input>
+                </ion-item>
+                <button-- [disabled]="comment_form.invalid" ion-button color="primary" block type="submit"></button-->
+
+                    <ion-row class="row">
+                        <ion-col class="col" col-10="">
+                             <ion-item>
+                              <ion-input placeholder="Write a comment" [(ngModel)]="post[i]" formControlName="comment" type="text"></ion-input>
+                             </ion-item>
+                          </ion-col>
+                        <ion-col class="col" col-2="">
+                            <button clear="" icon-only="" ion-button="" item-right="" class="">
+                              <ion-icon ios="ios-send" md="md-send" name="ios-send" role="img"></ion-icon>
+                            </button>
+                        </ion-col>
+                    </ion-row>
+            </form>
+        </ion-col>
+      </ion-row>
+
+      </ion-card>
+      </ng-container>
+
+      <ion-refresher (ionRefresh)="loadMorePost($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+      <ion-fab right bottom class="chat">
+          <button ion-fab color="light" (click)="chat()"><ion-icon name="ios-chatbubbles"></ion-icon></button>
+        </ion-fab>
+</ion-content>
+
+
+
+

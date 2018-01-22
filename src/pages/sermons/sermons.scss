@@ -1,15 +1,43 @@
 page-sermons {
-
-}
-page-sermons .item-md ion-thumbnail, page-sermons .item-ios ion-thumbnail {
+  .item-md ion-thumbnail, .item-ios ion-thumbnail {
     min-width: 50px;
     min-height: 50px;
-}
-page-sermons .item-md ion-thumbnail ion-img, page-sermons .item-md ion-thumbnail img, page-sermons .item-ios ion-thumbnail ion-img, page-sermons .item-ios ion-thumbnail img {
-    width: 50px;
-    height: 50px;
-}
+  }
+  .item-md ion-thumbnail ion-img, .item-md ion-thumbnail img, .item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img {
+      width: 50px;
+      height: 50px;
+  }
 
-page-sermons ion-icon::before {
-    color: #40537e;font-size: 2.5rem;
+  .bar-buttons {color: #ccc !important;font-size: 2.5rem;}
+  ion-icon::before {
+      color: #ccc;font-size: 2.5rem;
+  }
+
+  ion-header .toolbar-content {
+    position: absolute;
+    left: 0;top: 0;
+    right: 0;padding: 1.5rem 0;
+  }
+
+  .back-button.show-back-button{
+    z-index: 9999;
+  }
+
+  button.dark{margin: -50px 0 0 -1px !important;}
+  .item-md h2 {
+    margin: 13px 0;
+  }
+  .range-md .range-slider{
+    height: 31px;
+  }
+
+  .toolbar-background-md, .toolbar-background-ios {
+    border-color: transparent;
+    background: #40537e;
+  }
+  .toolbar-title-md, .toolbar-title-ios{color:#FFF;}
+  ion-menu .content-md {
+    color: #FFF;
+    background-color: #556a98;
+  }
 }

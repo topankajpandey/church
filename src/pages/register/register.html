@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" persistent="true">
+    <ion-title text-center>
+      Register
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-bg">
+
+    <ion-list>
+      <form [formGroup]="register_form" (ngSubmit)="register()">
+
+
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input [(ngModel)]="register_data.username" formControlName="username"  type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input [(ngModel)]="register_data.email" formControlName="email"   type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input [(ngModel)]="register_data.password" formControlName="password"  value="" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input [(ngModel)]="register_data.confirm_password" formControlName="confirm_password" value="" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input [(ngModel)]="register_data.first_name" formControlName="first_name" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input [(ngModel)]="register_data.last_name" formControlName="last_name" type="text"></ion-input>
+      </ion-item>
+
+      <div class="forgot">
+        <a href="javascript:void(0)" (click)="login()">Already sign up! Login here</a>
+      </div>
+      <div padding>
+        <button ion-button color="primary" block type="submit" [disabled]="register_form.invalid">Register</button>
+      </div>
+    </form>
+    <!--div padding>
+      <button ion-button color="primary" block type="submit" (click)="login()">Login</button>
+    </div-->
+
+
+    </ion-list>
+</ion-content>

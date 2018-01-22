@@ -10,9 +10,7 @@
 
     <ion-list>
       <form [formGroup]="login_form" (ngSubmit)="login()">
-      <ion-item text-center>
-            <img src="assets/icon/mail.png">
-      </ion-item>
+
 
       <ion-item>
         <ion-label floating>Username</ion-label>
@@ -23,10 +21,16 @@
         <ion-label floating>Password</ion-label>
         <ion-input [(ngModel)]="login_data.password" formControlName="password" value="" type="password"></ion-input>
       </ion-item>
-
+      <div class="forgot">
+        <a href="javascript:void(0)" (click)="register()">Create an account</a>
+      </div>
       <div padding>
-        <button ion-button color="primary" block type="submit" [disabled]="login_form.invalid">Submit</button>
+        <button ion-button color="primary" block type="submit" [disabled]="login_form.invalid">Login</button>
       </div>
       </form>
+
+      <!--div padding>
+        <button ion-button color="primary" block type="submit" (click)="register()">Register</button>
+      </div-->
     </ion-list>
 </ion-content>

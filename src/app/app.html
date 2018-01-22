@@ -1,13 +1,22 @@
 
 <ion-menu [content]="content" persistent="true">
-  <ion-content>
-	  <div class="bg-block nav-lt">
-			<div class="user-img"> <img src="assets/imgs/marty-avatar.png"></div>
-			<div class="user-name">{{this.username}}</div>
+  <ion-content class="menu-content myBg">
+	  <div class="bg-block nav-lt" menuClose  (click)="my_profile(user_id, username, 'assets/imgs/marty-avatar.png')">
+			<div class="user-img">
+        <ng-container *ngIf="user_photo==''; else elseTemplate">
+            <img src="assets/imgs/marty-avatar.png">
+        </ng-container>
+        <ng-template #elseTemplate>
+            <img src="{{user_photo}}">
+        </ng-template>
+      </div>
+			<div class="user-name">{{username}}</div>
 		</div>
-      <ion-list class="left-nav">
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
-        <button menuClose ion-item (click)="logout()">Logout</button>
+      <ion-list class="left-nav custom-icon">
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon class="" name="{{p.icon}}"></ion-icon>&nbsp;{{p.title}} <ion-icon name='ios-arrow-forward' item-end></ion-icon>
+        </button>
+        <button menuClose ion-item (click)="logout()"><ion-icon name="md-power"></ion-icon> &nbsp; Logout</button>
       </ion-list>
   </ion-content>
 </ion-menu>

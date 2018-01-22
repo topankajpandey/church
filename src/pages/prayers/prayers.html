@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-navbar hideBackButton="true" persistent="true">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title text-center>Request Prayer</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content class="login-bg">
+
+      <ion-list>
+        <form [formGroup]="prayer_form" (ngSubmit)="request()">
+
+
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input [(ngModel)]="prayer_data.name" formControlName="name"  type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Prayer For</ion-label>
+          <ion-select interface="popover" (ionChange)="prayer_selection($event)" [(ngModel)]="prayer_data.prayer_for" formControlName="prayer_for">
+            <ion-option value="Self" selected>Self</ion-option>
+            <ion-option value="Other">Other</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item *ngIf="prayer_for_conditions">
+          <ion-label floating>Person Name For Prayer</ion-label>
+          <ion-input [(ngModel)]="prayer_data.prayer_for_value" formControlName="prayer_for_value"  type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>State</ion-label>
+          <ion-input [(ngModel)]="prayer_data.state" formControlName="state"  type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Country</ion-label>
+          <ion-input [(ngModel)]="prayer_data.country" formControlName="country"  type="text"></ion-input>
+        </ion-item>
+
+
+
+        <ion-item>
+          <ion-label>Type of Prayer</ion-label>
+          <ion-select [(ngModel)]="prayer_data.type" formControlName="type">
+            <ion-option value="Drugs" selected>Drugs</ion-option>
+            <ion-option value="Sexual/pornography">Sexual/pornography</ion-option>
+            <ion-option value="Alcohol">Alcohol</ion-option>
+            <ion-option value="Gambling">Gambling</ion-option>
+
+            <ion-option value="Church">Church</ion-option>
+            <ion-option value="Death/grief">Death/grief</ion-option>
+            <ion-option value="Healing">Healing</ion-option>
+            <ion-option value="Strength">Strength</ion-option>
+            <ion-option value="Guidance">Guidance</ion-option>
+            <ion-option value="Depression">Depression</ion-option>
+            <ion-option value="Suicide">Suicide</ion-option>
+            <ion-option value="Family">Family</ion-option>
+            <ion-option value="Financial">Financial</ion-option>
+            <ion-option value="Spouse">Spouse</ion-option>
+
+            <ion-option value="Job">Job</ion-option>
+            <ion-option value="Pain release">Pain release</ion-option>
+            <ion-option value="Medical wisdom">Medical wisdom</ion-option>
+            <ion-option value="Guidance">Guidance</ion-option>
+            <ion-option value="Surgery">Surgery</ion-option>
+            <ion-option value="Prison">Prison</ion-option>
+            <ion-option value="Abuse">Abuse</ion-option>
+            <ion-option value="Wisdom">Wisdom</ion-option>
+            <ion-option value="Divorce/separation">Divorce/separation</ion-option>
+            <ion-option value="Reconciliation">Reconciliation</ion-option>
+            <ion-option value="Loneliness">Loneliness</ion-option>
+            <ion-option value="Self">Self</ion-option>
+            <ion-option value="Family">Family</ion-option>
+            <ion-option value="Others">Others</ion-option>
+          </ion-select>
+        </ion-item>
+
+
+        <div padding>
+          <button ion-button color="primary" block type="submit" [disabled]="prayer_form.invalid">Request Prayer</button>
+        </div>
+      </form>
+      <!--div padding>
+        <button ion-button color="primary" block type="submit" (click)="login()">Login</button>
+      </div-->
+
+
+      </ion-list>
+  </ion-content>
+

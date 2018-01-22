@@ -1,78 +1,22 @@
-<!--
-  Generated template for the BiblePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar hideBackButton="true" persistent="true">
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title text-center>Bible</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content>
-<ion-list>
-  <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-    <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-    <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-    <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-  <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-    <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-    <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-    <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/thumbnail-rotla.png">
-    </ion-thumbnail>
-    <h2>Holy Bible, King James Version</h2>
-    <p>Zondervan</p>
-  </ion-item>
-</ion-list>
+  <ion-list  *ngIf="bibles?.length >0">
+    <ion-item (click)="view_bible_book(bible.link, bible.title)" *ngFor="let bible of bibles; let i = index;">
+      <ion-thumbnail item-start>
+        <img src="{{bible.picture}}" width="60">
+      </ion-thumbnail>
+      <h2>{{bible.title}}</h2>
+      <p>{{bible.author}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

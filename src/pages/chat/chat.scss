@@ -1,6 +1,38 @@
 page-chat {
+  ion-icon::before {color: #40537e;  }
+  .bg-block{padding:6rem 0;background:#f4f4f4;}
+  .user-img{width:80px;height:80px;overflow:hidden;border-radius:50%;margin:0 auto;}
+  .user-name{text-align:center;padding-top:2rem;font-weight:600;font-size:2.5rem;}
+  .back-button.show-back-button{
+    z-index: 9999;
+  }
+
+  ion-header .toolbar-content {
+    position: absolute;
+    left: 0;top: 0;
+    right: 0;padding: 1.5rem 0;
+  }
+
+  .back-button.show-back-button{
+    z-index: 9999;
+  }
+
+
+
+  .active{background:#556a98 !important;}
+
+  .toolbar-background-md, .toolbar-background-ios {
+    border-color: transparent;
+    background: #40537e;
+  }
+  .toolbar-title-md, .toolbar-title-ios{color:#FFF;}
+  ion-menu .content-md {
+    color: #FFF;
+    background-color: #556a98;
+  }
 
 }
+
 page-chat ion-segment{background:#919fb9;border-radius:50px;overflow:hidden;}
 page-chat .segment-md .segment-button, page-chat .segment-ios .segment-button{color:#FFF;font-weight:600;}
 page-chat .segment-md .segment-button.activated, page-chat .segment-md .segment-button.segment-activated, page-chat .segment-ios .segment-button.activated, page-chat .segment-ios .segment-button.segment-activated {

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Add Post</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <form [formGroup]="wall_form" (ngSubmit)="wallCreate()" enctype="multipart/form-data">
+
+    <ion-item>
+      <ion-label floating>Content</ion-label>
+      <ion-textarea [(ngModel)]="wall_data.content"  formControlName="content"></ion-textarea>
+    </ion-item>
+
+
+    <video width="{{platform_width}}" controls="false" style="display:none;" class="video_container">
+      <source src="mov_bbb.mp4" id="video_here"> Nof supported
+    </video>
+
+    <ion-item id="uploadPreview" style="display:none;">
+      <img src="">
+    </ion-item>
+
+    <ng-container *ngIf="base64Image; else elseTemplateProfilePic">
+      <ion-item>
+        <img src="{{base64Image}}">
+      </ion-item>
+
+    </ng-container>
+    <ng-template #elseTemplateProfilePic>
+        <div class="forgot">
+            <a href="javascript:void(0)" (click)="profileImageAction()">Add Media</a>
+            <div class="grab_video">
+              <input type="file" id="my_file" (change)="changeListener($event)">
+            </div>
+        </div>
+
+    </ng-template>
+    <div padding>
+      <button ion-button color="primary" block type="submit" [disabled]="wall_form.invalid">Create Post</button>
+    </div>
+  </form>
+
+  </ion-list>
+</ion-content>

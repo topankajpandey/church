@@ -1,0 +1,26 @@
+
+<ion-header>
+  <ion-navbar hideBackButton="true" persistent="true">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title text-center>Events</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+<ion-list  *ngIf="events?.length >0">
+  <ion-item *ngFor="let event of events; let i = index;" (click)="view_event(event.id)">
+    <ion-thumbnail item-start>
+      <img src="{{event.picture}}" width="60">
+    </ion-thumbnail>
+    <h2>{{event.title}}</h2>
+    <p [innerHTML]= "'' + event.description + ''"></p>
+    <p>{{event.date}}</p>
+
+  </ion-item>
+</ion-list>
+
+</ion-content>

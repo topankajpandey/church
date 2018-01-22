@@ -8,10 +8,9 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content>
   <img src="assets/imgs/advance-card-bttf.png">
-  <ion-list>
+  <!--ion-list>
   <ion-item>
     <ion-thumbnail item-start>
       <img src="assets/imgs/Play-Icon.png">
@@ -19,19 +18,25 @@
     <h2>The freedome of the gospel</h2>
     <button ion-button clear item-end><ion-icon name="md-add-circle"></ion-icon></button>
   </ion-item>
-  <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/Play-Icon.png">
-    </ion-thumbnail>
-    <h2>The freedome of the gospel</h2>
-    <button ion-button clear item-end><ion-icon name="md-add-circle"></ion-icon></button>
-  </ion-item>
-  <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/Play-Icon.png">
-    </ion-thumbnail>
-    <h2>The freedome of the gospel</h2>
-    <button ion-button clear item-end><ion-icon name="md-add-circle"></ion-icon></button>
-  </ion-item>
-</ion-list>
+</ion-list-->
+
+  <!--audio-track #audio *ngFor="let track of myTracks"  [track]="track" (onFinish)="onTrackFinished($event)">
+    <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/Play-Icon.png">
+          </ion-thumbnail>
+      <ion-thumbnail item-left>
+        <audio-track-play dark [audioTrack]="audio">
+          <ion-spinner></ion-spinner>
+        </audio-track-play>
+      </ion-thumbnail>
+
+      <div item-content style="width:100%">
+          <h2>{{audio.title}}</h2>
+        <audio-track-progress-bar dark duration progress [audioTrack]="audio" [ngStyle]="{visibility: audio.completed > 0 ? 'visible' : 'hidden'}"></audio-track-progress-bar>
+      </div>
+
+    </ion-item>
+  </audio-track-->
+
 </ion-content>

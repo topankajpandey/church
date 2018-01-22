@@ -1,0 +1,21 @@
+page-events {
+  ion-header .toolbar-content {
+    position: absolute;
+    left: 0;top: 0;
+    right: 0;padding: 1.5rem 0;
+  }
+
+  .back-button.show-back-button{
+    z-index: 9999;
+  }
+
+  .toolbar-background-md, .toolbar-background-ios {
+    border-color: transparent;
+    background: #40537e;
+  }
+  .toolbar-title-md, .toolbar-title-ios{color:#FFF;}
+  ion-menu .content-md {
+    color: #FFF;
+    background-color: #556a98;
+  }
+}

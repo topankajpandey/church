@@ -1,0 +1,42 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="login-bg">
+
+      <ion-list>
+        <form [formGroup]="user_form" (ngSubmit)="update_user()">
+
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input [(ngModel)]="user_data.email" formControlName="email"   type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input [(ngModel)]="user_data.password" formControlName="password"  value="" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>First Name</ion-label>
+          <ion-input [(ngModel)]="user_data.first_name" formControlName="first_name" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Last Name</ion-label>
+          <ion-input [(ngModel)]="user_data.last_name" formControlName="last_name" type="text"></ion-input>
+        </ion-item>
+
+        <div padding>
+          <button ion-button color="primary" block type="submit" [disabled]="user_form.invalid">Update</button>
+        </div>
+      </form>
+
+
+      </ion-list>
+  </ion-content>

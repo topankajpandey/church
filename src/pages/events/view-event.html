@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>View Event</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+    <ion-card *ngIf="event.title">
+      <ion-item>
+        <h2>{{event.title}}</h2>
+        <p>{{event.date}}</p>
+      </ion-item>
+      <img src="{{event.picture}}">
+      <ion-card-content>
+        <p [innerHTML]= "'' + event.description + ''"></p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

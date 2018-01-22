@@ -1,0 +1,73 @@
+<ion-header>
+      <ion-navbar>
+          <ion-title center>Comments</ion-title>
+          <ion-buttons end>
+              <button ion-button icon-only (click)="closeModal()">
+                  <ion-icon item-right name="ios-close-outline"></ion-icon>
+              </button>
+          </ion-buttons>
+      </ion-navbar>
+  </ion-header>
+
+
+
+  <ion-content>
+      <div class="message-wrap comment_section" *ngIf="comments?.length >0">
+          <div class="message left" *ngFor="let comment_data of comments">
+
+            <img alt="" class="user-img" src="{{comment_data.user_image}}">
+            <div class="msg-detail">
+              <div class="msg-content">
+                <span class="triangle"></span>
+                <p class="line-breaker ">{{comment_data.comment}}</p>
+              </div>
+              <div class="msg-info">
+                  <p>by {{comment_data.username}}</p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="message-wrap comment_section" *ngIf="comments?.length===0">
+            <ion-col class="col" col-12="">
+                    <ion-list-header class="item item-ios list-header list-header-ios" (click)="loadMoreComment()">
+                        <ion-label class="label label-ios" style="text-align:center;">
+                            No comment found for this post...
+                        </ion-label>
+                    </ion-list-header>
+              </ion-col>
+      </div>
+
+      <ion-col class="col" col-12="">
+        <ion-col class="col refresher_load"  *ngIf="comments?.length > 0">
+            <ion-list-header class="item item-ios list-header list-header-ios" (click)="loadMoreComment()">
+                <ion-label class="label label-ios" style="text-align:center;">
+                    <!--ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="left: 140px;position: absolute;"></ion-icon-->
+                    Load Comment
+                </ion-label>
+            </ion-list-header>
+        </ion-col>
+      </ion-col>
+
+
+
+      <!--ion-row class="row commentdiv">
+        <ion-col class="col" col-2="">
+            <ion-item>
+                <ion-avatar item-start >
+                  <img src="{{user.photo}}">
+                </ion-avatar>
+            </ion-item>
+        </ion-col>
+
+        <ion-col class="col" col-10="">
+          <form [formGroup]="comment_form" (ngSubmit)="postComments()">
+              <ion-item>
+                  <ion-input placeholder="Write a comment" [(ngModel)]="comment_data.comment" formControlName="comment" type="text"></ion-input>
+              </ion-item>
+              <button style="display:none;" [disabled]="comment_form.invalid" ion-button color="primary" block type="submit"></button>
+          </form>
+        </ion-col>
+    </ion-row-->
+
+  </ion-content>
